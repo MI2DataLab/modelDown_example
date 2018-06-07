@@ -6,6 +6,8 @@ Examples for modelDown
 
 A use case for 4 different regression model with data with 5 variables, 4 numerical and 1 categorical.
 
+Find the website here: https://mi2datalab.github.io/modelDown_example/
+
 Here is the script:
 
 ```{R}
