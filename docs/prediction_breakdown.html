@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <div class="container template-home">
+
+    <header>
+      <div class="navbar navbar-default navbar-fixed-top navbar-mi2" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            </a>
+            <a class="navbar-brand navbar-mi2" href="index.html">modelDown</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-mi2 nav navbar-nav">
+              <li>
+                <a href="index.html">
+                  <span class="fa fa-home fa-lg"></span>
+
+                </a>
+              </li>
+
+              <li>
+                  <a href="model_performance.html">Model Performance</a>
+              </li>
+              <li>
+                  <a href="variable_importance.html">Variable Importance</a>
+              </li>
+              <li>
+                  <a href="variable_response.html">Variable Response</a>
+              </li>
+              <li>
+                  <a href="prediction_breakdown.html">Prediction BreakDown</a>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right"></ul>
+          </div>
+          <!--/.nav-collapse -->
+        </div>
+        <!--/.container -->
+      </div>
+      <!--/.navbar -->
+    </header>
+
+    <div class="row" style="position: relative; margin-bottom:60px;">
+      <div style="text-align: center">
+    <div style="padding: 0px 20px;">
+        <h2>Prediction for lm - observation #161</h2>
+        <table class="table table-responsive table-bordered table-hover" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> construction.year </th>
+   <th style="text-align:right;"> surface </th>
+   <th style="text-align:right;"> floor </th>
+   <th style="text-align:right;"> no.rooms </th>
+   <th style="text-align:left;"> district </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2005 </td>
+   <td style="text-align:right;"> 22 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> Srodmiescie </td>
+  </tr>
+</tbody>
+</table>
+        <img src="img/prediction_breakdown_161_lm.png" />
+    </div>
+    <div style="padding: 0px 20px;">
+        <h2>Prediction for lm - observation #731</h2>
+        <table class="table table-responsive table-bordered table-hover" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> construction.year </th>
+   <th style="text-align:right;"> surface </th>
+   <th style="text-align:right;"> floor </th>
+   <th style="text-align:right;"> no.rooms </th>
+   <th style="text-align:left;"> district </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2010 </td>
+   <td style="text-align:right;"> 27 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> Srodmiescie </td>
+  </tr>
+</tbody>
+</table>
+        <img src="img/prediction_breakdown_731_lm.png" />
+    </div>
+    <div style="padding: 0px 20px;">
+        <h2>Prediction for lm - observation #2741</h2>
+        <table class="table table-responsive table-bordered table-hover" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> construction.year </th>
+   <th style="text-align:right;"> surface </th>
+   <th style="text-align:right;"> floor </th>
+   <th style="text-align:right;"> no.rooms </th>
+   <th style="text-align:left;"> district </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2009 </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Srodmiescie </td>
+  </tr>
+</tbody>
+</table>
+        <img src="img/prediction_breakdown_2741_lm.png" />
+    </div>
+    <div style="padding: 0px 20px;">
+        <h2>Prediction for lm - observation #4454</h2>
+        <table class="table table-responsive table-bordered table-hover" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> construction.year </th>
+   <th style="text-align:right;"> surface </th>
+   <th style="text-align:right;"> floor </th>
+   <th style="text-align:right;"> no.rooms </th>
+   <th style="text-align:left;"> district </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2005 </td>
+   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> Srodmiescie </td>
+  </tr>
+</tbody>
+</table>
+        <img src="img/prediction_breakdown_4454_lm.png" />
+    </div>
+    <div style="padding: 0px 20px;">
+        <h2>Prediction for randomForest - observation #161</h2>
+        <table class="table table-responsive table-bordered table-hover" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> construction.year </th>
+   <th style="text-align:right;"> surface </th>
+   <th style="text-align:right;"> floor </th>
+   <th style="text-align:right;"> no.rooms </th>
+   <th style="text-align:left;"> district </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2005 </td>
+   <td style="text-align:right;"> 22 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> Srodmiescie </td>
+  </tr>
+</tbody>
+</table>
+        <img src="img/prediction_breakdown_161_randomForest.png" />
+    </div>
+    <div style="padding: 0px 20px;">
+        <h2>Prediction for randomForest - observation #731</h2>
+        <table class="table table-responsive table-bordered table-hover" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> construction.year </th>
+   <th style="text-align:right;"> surface </th>
+   <th style="text-align:right;"> floor </th>
+   <th style="text-align:right;"> no.rooms </th>
+   <th style="text-align:left;"> district </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2010 </td>
+   <td style="text-align:right;"> 27 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> Srodmiescie </td>
+  </tr>
+</tbody>
+</table>
+        <img src="img/prediction_breakdown_731_randomForest.png" />
+    </div>
+    <div style="padding: 0px 20px;">
+        <h2>Prediction for randomForest - observation #2741</h2>
+        <table class="table table-responsive table-bordered table-hover" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> construction.year </th>
+   <th style="text-align:right;"> surface </th>
+   <th style="text-align:right;"> floor </th>
+   <th style="text-align:right;"> no.rooms </th>
+   <th style="text-align:left;"> district </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2009 </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Srodmiescie </td>
+  </tr>
+</tbody>
+</table>
+        <img src="img/prediction_breakdown_2741_randomForest.png" />
+    </div>
+    <div style="padding: 0px 20px;">
+        <h2>Prediction for randomForest - observation #4454</h2>
+        <table class="table table-responsive table-bordered table-hover" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> construction.year </th>
+   <th style="text-align:right;"> surface </th>
+   <th style="text-align:right;"> floor </th>
+   <th style="text-align:right;"> no.rooms </th>
+   <th style="text-align:left;"> district </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2005 </td>
+   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> Srodmiescie </td>
+  </tr>
+</tbody>
+</table>
+        <img src="img/prediction_breakdown_4454_randomForest.png" />
+    </div>
+    <div style="padding: 0px 20px;">
+        <h2>Prediction for gbm - observation #161</h2>
+        <table class="table table-responsive table-bordered table-hover" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> construction.year </th>
+   <th style="text-align:right;"> surface </th>
+   <th style="text-align:right;"> floor </th>
+   <th style="text-align:right;"> no.rooms </th>
+   <th style="text-align:left;"> district </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2005 </td>
+   <td style="text-align:right;"> 22 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> Srodmiescie </td>
+  </tr>
+</tbody>
+</table>
+        <img src="img/prediction_breakdown_161_gbm.png" />
+    </div>
+    <div style="padding: 0px 20px;">
+        <h2>Prediction for gbm - observation #731</h2>
+        <table class="table table-responsive table-bordered table-hover" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> construction.year </th>
+   <th style="text-align:right;"> surface </th>
+   <th style="text-align:right;"> floor </th>
+   <th style="text-align:right;"> no.rooms </th>
+   <th style="text-align:left;"> district </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2010 </td>
+   <td style="text-align:right;"> 27 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> Srodmiescie </td>
+  </tr>
+</tbody>
+</table>
+        <img src="img/prediction_breakdown_731_gbm.png" />
+    </div>
+    <div style="padding: 0px 20px;">
+        <h2>Prediction for gbm - observation #2741</h2>
+        <table class="table table-responsive table-bordered table-hover" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> construction.year </th>
+   <th style="text-align:right;"> surface </th>
+   <th style="text-align:right;"> floor </th>
+   <th style="text-align:right;"> no.rooms </th>
+   <th style="text-align:left;"> district </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2009 </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Srodmiescie </td>
+  </tr>
+</tbody>
+</table>
+        <img src="img/prediction_breakdown_2741_gbm.png" />
+    </div>
+    <div style="padding: 0px 20px;">
+        <h2>Prediction for gbm - observation #4454</h2>
+        <table class="table table-responsive table-bordered table-hover" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> construction.year </th>
+   <th style="text-align:right;"> surface </th>
+   <th style="text-align:right;"> floor </th>
+   <th style="text-align:right;"> no.rooms </th>
+   <th style="text-align:left;"> district </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2005 </td>
+   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> Srodmiescie </td>
+  </tr>
+</tbody>
+</table>
+        <img src="img/prediction_breakdown_4454_gbm.png" />
+    </div>
+    <div style="padding: 0px 20px;">
+        <h2>Prediction for svm - observation #161</h2>
+        <table class="table table-responsive table-bordered table-hover" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> construction.year </th>
+   <th style="text-align:right;"> surface </th>
+   <th style="text-align:right;"> floor </th>
+   <th style="text-align:right;"> no.rooms </th>
+   <th style="text-align:left;"> district </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2005 </td>
+   <td style="text-align:right;"> 22 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> Srodmiescie </td>
+  </tr>
+</tbody>
+</table>
+        <img src="img/prediction_breakdown_161_svm.png" />
+    </div>
+    <div style="padding: 0px 20px;">
+        <h2>Prediction for svm - observation #731</h2>
+        <table class="table table-responsive table-bordered table-hover" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> construction.year </th>
+   <th style="text-align:right;"> surface </th>
+   <th style="text-align:right;"> floor </th>
+   <th style="text-align:right;"> no.rooms </th>
+   <th style="text-align:left;"> district </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2010 </td>
+   <td style="text-align:right;"> 27 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> Srodmiescie </td>
+  </tr>
+</tbody>
+</table>
+        <img src="img/prediction_breakdown_731_svm.png" />
+    </div>
+    <div style="padding: 0px 20px;">
+        <h2>Prediction for svm - observation #2741</h2>
+        <table class="table table-responsive table-bordered table-hover" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> construction.year </th>
+   <th style="text-align:right;"> surface </th>
+   <th style="text-align:right;"> floor </th>
+   <th style="text-align:right;"> no.rooms </th>
+   <th style="text-align:left;"> district </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2009 </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Srodmiescie </td>
+  </tr>
+</tbody>
+</table>
+        <img src="img/prediction_breakdown_2741_svm.png" />
+    </div>
+    <div style="padding: 0px 20px;">
+        <h2>Prediction for svm - observation #4454</h2>
+        <table class="table table-responsive table-bordered table-hover" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> construction.year </th>
+   <th style="text-align:right;"> surface </th>
+   <th style="text-align:right;"> floor </th>
+   <th style="text-align:right;"> no.rooms </th>
+   <th style="text-align:left;"> district </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 2005 </td>
+   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> Srodmiescie </td>
+  </tr>
+</tbody>
+</table>
+        <img src="img/prediction_breakdown_4454_svm.png" />
+    </div>
+</div>
+    </div>
+
+
+  <footer>
+    <div class="footer">
+      <div class="text-center">Site built with <a href="https://github.com/MI2DataLab/modelDown">modelDown</a>.</div>
+      <div class="text-center" style="margin: 0px 0px 5px;">Last updated: 2018-06-08 00:05:26</div>
+    </div>
+  </footer>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <div class="container template-home">
+
+    <header>
+      <div class="navbar navbar-default navbar-fixed-top navbar-mi2" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            </a>
+            <a class="navbar-brand navbar-mi2" href="index.html">modelDown</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-mi2 nav navbar-nav">
+              <li>
+                <a href="index.html">
+                  <span class="fa fa-home fa-lg"></span>
+
+                </a>
+              </li>
+
+              <li>
+                  <a href="model_performance.html">Model Performance</a>
+              </li>
+              <li>
+                  <a href="variable_importance.html">Variable Importance</a>
+              </li>
+              <li>
+                  <a href="variable_response.html">Variable Response</a>
+              </li>
+              <li>
+                  <a href="prediction_breakdown.html">Prediction BreakDown</a>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right"></ul>
+          </div>
+          <!--/.nav-collapse -->
+        </div>
+        <!--/.container -->
+      </div>
+      <!--/.navbar -->
+    </header>
+
+    <div class="row" style="position: relative; margin-bottom:60px;">
+      <header class="bg-primary text-white">
+  <div class="container text-center">
+    <h1>modelDown</h1>
+    <p class="lead">Explore your model!</p>
+  </div>
+</header>
+
+<br>
+<br>
+
+<div class="row">
+  <div class="col-md-8">
+    <h3 class="my-3">Basic data information</h3>
+    <ul>
+      <li>9000 observations</li>
+      <li>5 columns</li>
+    </ul>
+  </div>
+  <div class="col-md-4" >
+    <h3 class="my-3">Explainers</h3>
+      <ul><li>lm <a href='explainers/lm.rda'>(download)</a></li><li>randomForest <a href='explainers/randomForest.rda'>(download)</a></li><li>gbm <a href='explainers/gbm.rda'>(download)</a></li><li>svm <a href='explainers/svm.rda'>(download)</a></li></ul>
+  </div>
+</div>
+
+<hr>
+
+<div class="text-center">
+  <h3 class="my-3">Summaries for numerical variables</h3>
+  <br>
+  <table class="table table-responsive table-bordered table-hover" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> vars </th>
+   <th style="text-align:right;"> n </th>
+   <th style="text-align:right;"> mean </th>
+   <th style="text-align:right;"> sd </th>
+   <th style="text-align:right;"> median </th>
+   <th style="text-align:right;"> trimmed </th>
+   <th style="text-align:right;"> mad </th>
+   <th style="text-align:right;"> min </th>
+   <th style="text-align:right;"> max </th>
+   <th style="text-align:right;"> range </th>
+   <th style="text-align:right;"> skew </th>
+   <th style="text-align:right;"> kurtosis </th>
+   <th style="text-align:right;"> se </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> construction.year </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 9000 </td>
+   <td style="text-align:right;"> 1964.879889 </td>
+   <td style="text-align:right;"> 25.996703 </td>
+   <td style="text-align:right;"> 1965 </td>
+   <td style="text-align:right;"> 1964.874583 </td>
+   <td style="text-align:right;"> 34.0998 </td>
+   <td style="text-align:right;"> 1920 </td>
+   <td style="text-align:right;"> 2010 </td>
+   <td style="text-align:right;"> 90 </td>
+   <td style="text-align:right;"> -0.0027636 </td>
+   <td style="text-align:right;"> -1.2021210 </td>
+   <td style="text-align:right;"> 0.2740293 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> surface </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 9000 </td>
+   <td style="text-align:right;"> 85.098444 </td>
+   <td style="text-align:right;"> 37.446046 </td>
+   <td style="text-align:right;"> 85 </td>
+   <td style="text-align:right;"> 85.095000 </td>
+   <td style="text-align:right;"> 47.4432 </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 150 </td>
+   <td style="text-align:right;"> 130 </td>
+   <td style="text-align:right;"> 0.0066850 </td>
+   <td style="text-align:right;"> -1.1962759 </td>
+   <td style="text-align:right;"> 0.3947160 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> floor </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 9000 </td>
+   <td style="text-align:right;"> 5.465778 </td>
+   <td style="text-align:right;"> 2.873823 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 5.461111 </td>
+   <td style="text-align:right;"> 4.4478 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 9 </td>
+   <td style="text-align:right;"> 0.0025968 </td>
+   <td style="text-align:right;"> -1.2216789 </td>
+   <td style="text-align:right;"> 0.0302928 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> no.rooms </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 9000 </td>
+   <td style="text-align:right;"> 3.356667 </td>
+   <td style="text-align:right;"> 1.391284 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 3.363889 </td>
+   <td style="text-align:right;"> 1.4826 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 0.0694464 </td>
+   <td style="text-align:right;"> -0.8667084 </td>
+   <td style="text-align:right;"> 0.0146654 </td>
+  </tr>
+</tbody>
+</table>
+  <hr>
+    <h3 class="my-3">Summaries for categorical variables</h3>
+    <br><table class="table table-responsive table-bordered table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> district </th>
+   <th style="text-align:right;"> Frequency </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Bemowo </td>
+   <td style="text-align:right;"> 896 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Bielany </td>
+   <td style="text-align:right;"> 894 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mokotow </td>
+   <td style="text-align:right;"> 868 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ochota </td>
+   <td style="text-align:right;"> 909 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Praga </td>
+   <td style="text-align:right;"> 971 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Srodmiescie </td>
+   <td style="text-align:right;"> 924 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ursus </td>
+   <td style="text-align:right;"> 920 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ursynow </td>
+   <td style="text-align:right;"> 864 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Wola </td>
+   <td style="text-align:right;"> 892 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Zoliborz </td>
+   <td style="text-align:right;"> 862 </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+<br>
+<br>
+    </div>
+
+
+  <footer>
+    <div class="footer">
+      <div class="text-center">Site built with <a href="https://github.com/MI2DataLab/modelDown">modelDown</a>.</div>
+      <div class="text-center" style="margin: 0px 0px 5px;">Last updated: 2018-06-08 00:05:26</div>
+    </div>
+  </footer>
+
+  </div>
+
+</body>
+</html>
