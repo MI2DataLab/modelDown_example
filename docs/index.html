@@ -10,7 +10,38 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
     crossorigin="anonymous">
 
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="./mi2template.css">
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <script>
+    function makeHelpPanel(help_link, docs_link) {
+      return '\
+            <div class="help-panel">\
+              <div class="title"><i class="fa fa-question" aria-hidden="true"></i> Helpful resources</div>\
+              <a href="' + docs_link + '" target="_blank">Technical documentation</a>\
+              <a href="' + help_link + '" target="_blank">Business description</a>\
+            </div>\
+            ';
+    };
+
+    function renderHelpPanels() {
+      var panel = document.getElementsByTagName("help-panel")[0];
+
+      while(panel) {
+        var docs_url = panel.attributes["docs-url"].value; 
+        var help_url = panel.attributes["help-url"].value;
+        
+        var html = makeHelpPanel(help_url, docs_url);
+        panel.outerHTML = html;
+
+        panel = document.getElementsByTagName("help-panel")[0]; 
+        // Not iterating the result because it changes after each iteration
+      }
+    }
+
+    $(document).ready(function(){
+      renderHelpPanels();
+    });
+  </script>
 </head>
 
 <body>
@@ -27,28 +58,28 @@
               <span class="icon-bar"></span>
             </button>
             </a>
-            <a class="navbar-brand navbar-mi2" href="index.html">modelDown</a>
+            <a class="navbar-brand navbar-mi2" href="./index.html">modelDown</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="navbar-mi2 nav navbar-nav">
               <li>
-                <a href="index.html">
+                <a href="./index.html">
                   <span class="fa fa-home fa-lg"></span>
 
                 </a>
               </li>
 
               <li>
-                  <a href="model_performance.html">Model Performance</a>
+                  <a href="./auditor/index.html">Auditor</a>
               </li>
               <li>
-                  <a href="variable_importance.html">Variable Importance</a>
+                  <a href="./model_performance/index.html">Model Performance</a>
               </li>
               <li>
-                  <a href="variable_response.html">Variable Response</a>
+                  <a href="./variable_importance/index.html">Variable Importance</a>
               </li>
               <li>
-                  <a href="prediction_breakdown.html">Prediction BreakDown</a>
+                  <a href="./variable_response/index.html">Variable Response</a>
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right"></ul>
@@ -61,12 +92,13 @@
     </header>
 
     <div class="row" style="position: relative; margin-bottom:60px;">
-      <header class="bg-primary text-white">
+      <header class="intro-header">
   <div class="container text-center">
     <h1>modelDown</h1>
     <p class="lead">Explore your model!</p>
   </div>
 </header>
+
 
 <br>
 <br>
@@ -75,17 +107,18 @@
   <div class="col-md-8">
     <h3 class="my-3">Basic data information</h3>
     <ul>
-      <li>9000 observations</li>
-      <li>5 columns</li>
+      <li>2099 observations</li>
+      <li>7 columns</li>
     </ul>
   </div>
   <div class="col-md-4" >
     <h3 class="my-3">Explainers</h3>
-      <ul><li>lm <a href='explainers/lm.rda'>(download)</a></li><li>randomForest <a href='explainers/randomForest.rda'>(download)</a></li><li>gbm <a href='explainers/gbm.rda'>(download)</a></li><li>svm <a href='explainers/svm.rda'>(download)</a></li></ul>
+      <ul><li>Random Forest v7 <a href='explainers/Random Forest v7.rda'>(download)</a></li><li>Generalized Boosted Models <a href='explainers/Generalized Boosted Models.rda'>(download)</a></li><li>Support Vector Machines <a href='explainers/Support Vector Machines.rda'>(download)</a></li><li>k-Nearest Neighbours <a href='explainers/k-Nearest Neighbours.rda'>(download)</a></li></ul>
   </div>
 </div>
 
 <hr>
+
 
 <div class="text-center">
   <h3 class="my-3">Summaries for numerical variables</h3>
@@ -111,68 +144,68 @@
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> construction.year </td>
+   <td style="text-align:left;"> age </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 9000 </td>
-   <td style="text-align:right;"> 1964.879889 </td>
-   <td style="text-align:right;"> 25.996703 </td>
-   <td style="text-align:right;"> 1965 </td>
-   <td style="text-align:right;"> 1964.874583 </td>
-   <td style="text-align:right;"> 34.0998 </td>
-   <td style="text-align:right;"> 1920 </td>
-   <td style="text-align:right;"> 2010 </td>
-   <td style="text-align:right;"> 90 </td>
-   <td style="text-align:right;"> -0.0027636 </td>
-   <td style="text-align:right;"> -1.2021210 </td>
-   <td style="text-align:right;"> 0.2740293 </td>
+   <td style="text-align:right;"> 2099 </td>
+   <td style="text-align:right;"> 30.5235827 </td>
+   <td style="text-align:right;"> 12.1904498 </td>
+   <td style="text-align:right;"> 29.00 </td>
+   <td style="text-align:right;"> 29.9756098 </td>
+   <td style="text-align:right;"> 10.37820 </td>
+   <td style="text-align:right;"> 0.1666667 </td>
+   <td style="text-align:right;"> 74.0000 </td>
+   <td style="text-align:right;"> 73.83333 </td>
+   <td style="text-align:right;"> 0.3986299 </td>
+   <td style="text-align:right;"> 0.474194 </td>
+   <td style="text-align:right;"> 0.2660808 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> surface </td>
+   <td style="text-align:left;"> fare </td>
    <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 9000 </td>
-   <td style="text-align:right;"> 85.098444 </td>
-   <td style="text-align:right;"> 37.446046 </td>
-   <td style="text-align:right;"> 85 </td>
-   <td style="text-align:right;"> 85.095000 </td>
-   <td style="text-align:right;"> 47.4432 </td>
-   <td style="text-align:right;"> 20 </td>
-   <td style="text-align:right;"> 150 </td>
-   <td style="text-align:right;"> 130 </td>
-   <td style="text-align:right;"> 0.0066850 </td>
-   <td style="text-align:right;"> -1.1962759 </td>
-   <td style="text-align:right;"> 0.3947160 </td>
+   <td style="text-align:right;"> 2099 </td>
+   <td style="text-align:right;"> 18.6931177 </td>
+   <td style="text-align:right;"> 39.9787048 </td>
+   <td style="text-align:right;"> 7.15 </td>
+   <td style="text-align:right;"> 9.4920502 </td>
+   <td style="text-align:right;"> 10.60059 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 512.0607 </td>
+   <td style="text-align:right;"> 512.06070 </td>
+   <td style="text-align:right;"> 4.9478989 </td>
+   <td style="text-align:right;"> 35.405504 </td>
+   <td style="text-align:right;"> 0.8726147 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> floor </td>
+   <td style="text-align:left;"> sibsp </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 9000 </td>
-   <td style="text-align:right;"> 5.465778 </td>
-   <td style="text-align:right;"> 2.873823 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 5.461111 </td>
-   <td style="text-align:right;"> 4.4478 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 0.0025968 </td>
-   <td style="text-align:right;"> -1.2216789 </td>
-   <td style="text-align:right;"> 0.0302928 </td>
+   <td style="text-align:right;"> 2099 </td>
+   <td style="text-align:right;"> 0.3015722 </td>
+   <td style="text-align:right;"> 0.8484003 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.1171921 </td>
+   <td style="text-align:right;"> 0.00000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 8.0000 </td>
+   <td style="text-align:right;"> 8.00000 </td>
+   <td style="text-align:right;"> 5.0095917 </td>
+   <td style="text-align:right;"> 33.725541 </td>
+   <td style="text-align:right;"> 0.0185180 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> no.rooms </td>
+   <td style="text-align:left;"> parch </td>
    <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 9000 </td>
-   <td style="text-align:right;"> 3.356667 </td>
-   <td style="text-align:right;"> 1.391284 </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 3.363889 </td>
-   <td style="text-align:right;"> 1.4826 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 0.0694464 </td>
-   <td style="text-align:right;"> -0.8667084 </td>
-   <td style="text-align:right;"> 0.0146654 </td>
+   <td style="text-align:right;"> 2099 </td>
+   <td style="text-align:right;"> 0.2315388 </td>
+   <td style="text-align:right;"> 0.6998134 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0.0505651 </td>
+   <td style="text-align:right;"> 0.00000 </td>
+   <td style="text-align:right;"> 0.0000000 </td>
+   <td style="text-align:right;"> 9.0000 </td>
+   <td style="text-align:right;"> 9.00000 </td>
+   <td style="text-align:right;"> 4.8433914 </td>
+   <td style="text-align:right;"> 36.259486 </td>
+   <td style="text-align:right;"> 0.0152748 </td>
   </tr>
 </tbody>
 </table>
@@ -181,50 +214,80 @@
     <br><table class="table table-responsive table-bordered table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
-   <th style="text-align:left;"> district </th>
+   <th style="text-align:left;"> gender </th>
    <th style="text-align:right;"> Frequency </th>
   </tr>
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> Bemowo </td>
-   <td style="text-align:right;"> 896 </td>
+   <td style="text-align:left;"> female </td>
+   <td style="text-align:right;"> 464 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Bielany </td>
-   <td style="text-align:right;"> 894 </td>
+   <td style="text-align:left;"> male </td>
+   <td style="text-align:right;"> 1635 </td>
+  </tr>
+</tbody>
+</table><br><table class="table table-responsive table-bordered table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> class </th>
+   <th style="text-align:right;"> Frequency </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 1st </td>
+   <td style="text-align:right;"> 301 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Mokotow </td>
-   <td style="text-align:right;"> 868 </td>
+   <td style="text-align:left;"> 2nd </td>
+   <td style="text-align:right;"> 263 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Ochota </td>
-   <td style="text-align:right;"> 909 </td>
+   <td style="text-align:left;"> 3rd </td>
+   <td style="text-align:right;"> 649 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Praga </td>
-   <td style="text-align:right;"> 971 </td>
+   <td style="text-align:left;"> deck crew </td>
+   <td style="text-align:right;"> 66 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Srodmiescie </td>
-   <td style="text-align:right;"> 924 </td>
+   <td style="text-align:left;"> engineering crew </td>
+   <td style="text-align:right;"> 322 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Ursus </td>
-   <td style="text-align:right;"> 920 </td>
+   <td style="text-align:left;"> restaurant staff </td>
+   <td style="text-align:right;"> 69 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Ursynow </td>
-   <td style="text-align:right;"> 864 </td>
+   <td style="text-align:left;"> victualling crew </td>
+   <td style="text-align:right;"> 429 </td>
+  </tr>
+</tbody>
+</table><br><table class="table table-responsive table-bordered table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> embarked </th>
+   <th style="text-align:right;"> Frequency </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Belfast </td>
+   <td style="text-align:right;"> 188 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Wola </td>
-   <td style="text-align:right;"> 892 </td>
+   <td style="text-align:left;"> Cherbourg </td>
+   <td style="text-align:right;"> 244 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Zoliborz </td>
-   <td style="text-align:right;"> 862 </td>
+   <td style="text-align:left;"> Queenstown </td>
+   <td style="text-align:right;"> 122 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Southampton </td>
+   <td style="text-align:right;"> 1545 </td>
   </tr>
 </tbody>
 </table>
@@ -238,7 +301,7 @@
   <footer>
     <div class="footer">
       <div class="text-center">Site built with <a href="https://github.com/MI2DataLab/modelDown">modelDown</a>.</div>
-      <div class="text-center" style="margin: 0px 0px 5px;">Last updated: 2018-06-08 00:05:26</div>
+      <div class="text-center" style="margin: 0px 0px 5px;">Last updated: 2019-03-17 11:33:52 (session_info: <a href="session_info/session_info.txt">.txt</a>, <a href="session_info/session_info.rda">.rda</a>)</div>
     </div>
   </footer>
 

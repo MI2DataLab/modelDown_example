@@ -1,62 +1,63 @@
 # modelDown ShowCase
 
-Examples for modelDown
+Examples for [modelDown](https://github.com/MI2DataLab/modelDown)
 
-## Regression for apartments data
+## Classification for RMS Titanic data
 
-A use case for 4 different regression model with data with 5 variables, 4 numerical and 1 categorical.
+A use case for 4 different classification models with 7 features: 4 numerical and 3 categorical.
 
 Find the website here: https://mi2datalab.github.io/modelDown_example/
 
 Here is the script:
 
 ```{R}
-library("randomForest")
-library("breakDown")
+# Prepare the data
 library("DALEX")
-library("gbm")
+titanic <- na.omit(titanic)
+
+# Random Forest model
+library("randomForest")
+model_titanic_rf <- randomForest(survived == "yes" ~ gender + age + class + embarked +
+                                   fare + sibsp + parch,  data = titanic[,-5])
+explain_titanic_rf <- explain(model_titanic_rf, 
+                              data = titanic[,-c(9,5)],
+                              y = titanic$survived == "yes", 
+                              label = "Random Forest v7")
+
+# SVM model
 library("e1071")
+model_titanic_svm <- svm(survived == "yes" ~ class + gender + age + sibsp +
+                           parch + fare + embarked, data = titanic[,-5], 
+                         type = "C-classification", probability = TRUE)
+explain_titanic_svm <- explain(model_titanic_svm, data = titanic[,-c(9,5)], 
+                               y = titanic$survived == "yes", 
+                               label = "Support Vector Machines")
 
-# lm
+# GBM model
+library("gbm")
+model_titanic_gbm <- gbm(survived == "yes" ~ class + gender + age + sibsp +
+                           parch + fare + embarked, data = titanic[,-5], n.trees = 15000)
+explain_titanic_gbm <- explain(model_titanic_gbm, data = titanic[,-c(9,5)], 
+                               y = titanic$survived == "yes", 
+                               predict_function = function(m,x) predict(m, x, n.trees = 15000, type = "response"),
+                               label = "Generalized Boosted Models")
 
-apartments_lm_model <- lm(m2.price ~ construction.year + surface + floor + 
-                         no.rooms + district, data = apartments)
-explainer_lm <- explain(apartments_lm_model, 
-                          data = apartmentsTest[,2:6], y = apartmentsTest$m2.price)
+# k-NN model
 
-# randomForest
-set.seed(59)
-apartments_rf_model <- randomForest(m2.price ~ construction.year + surface + floor + 
-                      no.rooms + district, data = apartments)
-explainer_rf <- explain(apartments_rf_model, 
-                       data = apartmentsTest[,2:6], y = apartmentsTest$m2.price)
-
-# gbm
-apartments_gbm_model <- gbm(m2.price ~ construction.year + surface + floor + 
-                         no.rooms + district, data = apartments, n.trees = 1000)
-explainer_gbm <- explain(apartments_gbm_model, 
-                          data = apartmentsTest[,2:6], y = apartmentsTest$m2.price,
-                         predict_function = function(m, d) predict(m, d, n.trees = 1000))
-
-# SVM
-apartments_svm_model <- svm(m2.price ~ construction.year + surface + floor + 
-                         no.rooms + district, data = apartments)
-
-explainer_svm <- explain(apartments_svm_model, 
-                          data = apartmentsTest[,2:6], y = apartmentsTest$m2.price)
+library("caret")
+model_titanic_knn <- knn3(survived == "yes" ~ class + gender + age + sibsp +
+                            parch + fare + embarked, data = titanic[,-5], k = 5)
+explain_titanic_knn <- explain(model_titanic_knn, data = titanic[,-c(9,5)], 
+                               y = titanic$survived == "yes", 
+                               predict_function = function(m,x) predict(m, x)[,2],
+                               label = "k-Nearest Neighbours")
 
 
 # Website generation
-modelDown(explainer_lm, explainer_rf, 
-          explainer_gbm, explainer_svm,
-  modules = c("model_performance", "variable_importance", 
-              "variable_response", "prediction_breakdown"),
-  output_folder = "modelDown_example",
-  pb.observations = c(161, 731, 2741, 4454),
-  vr.type = "pdp",
-  plot_width = 800,
-  pb.plot_width = 800,
-  mp.plot_width = 800,
-  vi.plot_width = 800,
-  vr.plot_width = 800)
+modelDown(explain_titanic_rf, explain_titanic_gbm, 
+          explain_titanic_svm, explain_titanic_knn,
+  device = "svg",
+  remote_repository_path = "MI2DataLab/modelDown_example/docs",
+  output_folder = "modelDown_Titanic_example")
+
 ```

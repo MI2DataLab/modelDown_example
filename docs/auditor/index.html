@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="../mi2template.css">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script>
+    function makeHelpPanel(help_link, docs_link) {
+      return '\
+            <div class="help-panel">\
+              <div class="title"><i class="fa fa-question" aria-hidden="true"></i> Helpful resources</div>\
+              <a href="' + docs_link + '" target="_blank">Technical documentation</a>\
+              <a href="' + help_link + '" target="_blank">Business description</a>\
+            </div>\
+            ';
+    };
+
+    function renderHelpPanels() {
+      var panel = document.getElementsByTagName("help-panel")[0];
+
+      while(panel) {
+        var docs_url = panel.attributes["docs-url"].value; 
+        var help_url = panel.attributes["help-url"].value;
+        
+        var html = makeHelpPanel(help_url, docs_url);
+        panel.outerHTML = html;
+
+        panel = document.getElementsByTagName("help-panel")[0]; 
+        // Not iterating the result because it changes after each iteration
+      }
+    }
+
+    $(document).ready(function(){
+      renderHelpPanels();
+    });
+  </script>
+</head>
+
+<body>
+
+  <div class="container template-home">
+
+    <header>
+      <div class="navbar navbar-default navbar-fixed-top navbar-mi2" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            </a>
+            <a class="navbar-brand navbar-mi2" href="../index.html">modelDown</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-mi2 nav navbar-nav">
+              <li>
+                <a href="../index.html">
+                  <span class="fa fa-home fa-lg"></span>
+
+                </a>
+              </li>
+
+              <li>
+                  <a href="../auditor/index.html">Auditor</a>
+              </li>
+              <li>
+                  <a href="../model_performance/index.html">Model Performance</a>
+              </li>
+              <li>
+                  <a href="../variable_importance/index.html">Variable Importance</a>
+              </li>
+              <li>
+                  <a href="../variable_response/index.html">Variable Response</a>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right"></ul>
+          </div>
+          <!--/.nav-collapse -->
+        </div>
+        <!--/.container -->
+      </div>
+      <!--/.navbar -->
+    </header>
+
+    <div class="row" style="position: relative; margin-bottom:60px;">
+      <script type="text/javascript">
+  function loadOptionalCharts() {
+    if ("" !== "") {
+        document.getElementById("lift").innerHTML =
+        '<img class="plot" src="img/" /><br/>\
+         <help-panel help-url="https://mi2datalab.github.io/auditor/articles/model_evaluation_audit.html#lift-chart" docs-url="https://mi2datalab.github.io/auditor/reference/plotLIFT.html"></help-panel><br />';
+    }
+    if ("" !== "") {
+        document.getElementById("roc").innerHTML =
+          '<img class="plot" src="img/" /><br/>\
+           <help-panel help-url="https://mi2datalab.github.io/auditor/articles/model_evaluation_audit.html#receiver-operating-characteristic-roc" docs-url="https://mi2datalab.github.io/auditor/reference/plotROC.html"></help-panel><br />';
+    }
+  }
+
+  function loadAudit() {
+      document.getElementById("auditor_charts").innerHTML =
+        '<h2>Model Audit</h2>\
+        <p>Load: <code>archivist::aread(&quot;MI2DataLab/modelDown_example/docs/modelDown_Titanic_example/repository/bc17dcf7b00171d3394b718894d10bdb&quot;)</code></p>\
+        <div class="data-container">\
+            <div id="lift"></div>\
+            <div id="roc"></div>\
+            <img class="plot" src="img/rroc.svg" /><br />\
+            <help-panel help-url="https://mi2datalab.github.io/auditor/articles/model_residuals_audit.html#plotrroc---regression-receiver-operating-characteristic-rroc" docs-url="https://mi2datalab.github.io/auditor/reference/plotRROC.html"></help-panel>\
+            <br/>\
+            <img class="plot" src="img/ranking.svg" /><br />\
+            <help-panel help-url="https://mi2datalab.github.io/auditor/articles/model_performance_audit.html#model-ranking-radar-plot" docs-url="https://mi2datalab.github.io/auditor/reference/plotModelRanking.html"></help-panel>\
+            <br/>\
+            <img class="plot" src="img/residuals.svg" /><br />\
+            <help-panel help-url="https://mi2datalab.github.io/auditor/articles/model_residuals_audit.html#plotresidual---plot-residuals-vs-observed-fitted-or-variable-values" docs-url="https://mi2datalab.github.io/auditor/reference/plotResidual.html"></help-panel>\
+            <br/>\
+            <img class="plot" src="img/rec.svg" /><br />\
+            <help-panel help-url="https://mi2datalab.github.io/auditor/articles/model_residuals_audit.html#plotrec---regression-error-characteristic-rec-curve" docs-url="https://mi2datalab.github.io/auditor/reference/plotREC.html"></help-panel>\
+            <br/>\
+            <img class="plot" src="img/acf.svg" /><br />\
+            <help-panel help-url="https://mi2datalab.github.io/auditor/articles/model_residuals_audit.html#plotacf---autocorrelation-function-of-residuals" docs-url="https://mi2datalab.github.io/auditor/reference/plotACF.html"></help-panel>\
+            <br/>\
+            <img class="plot" src="img/scale_location.svg" /><br />\
+            <help-panel help-url="https://mi2datalab.github.io/auditor/articles/model_residuals_audit.html#plotscalelocation---scale-location-plot" docs-url="https://mi2datalab.github.io/auditor/reference/plotScaleLocation.html"></help-panel>\
+        </div>'
+      loadOptionalCharts()
+  }
+  $(document).ready(function(){
+    loadAudit();
+    renderHelpPanels();
+  });
+</script>
+
+<div id="auditor_charts" style="text-align: center"></div>
+    </div>
+
+
+  <footer>
+    <div class="footer">
+      <div class="text-center">Site built with <a href="https://github.com/MI2DataLab/modelDown">modelDown</a>.</div>
+      <div class="text-center" style="margin: 0px 0px 5px;">Last updated: 2019-03-17 11:33:52 (session_info: <a href="session_info/session_info.txt">.txt</a>, <a href="session_info/session_info.rda">.rda</a>)</div>
+    </div>
+  </footer>
+
+  </div>
+
+</body>
+</html>

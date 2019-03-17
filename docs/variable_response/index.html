@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="../mi2template.css">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script>
+    function makeHelpPanel(help_link, docs_link) {
+      return '\
+            <div class="help-panel">\
+              <div class="title"><i class="fa fa-question" aria-hidden="true"></i> Helpful resources</div>\
+              <a href="' + docs_link + '" target="_blank">Technical documentation</a>\
+              <a href="' + help_link + '" target="_blank">Business description</a>\
+            </div>\
+            ';
+    };
+
+    function renderHelpPanels() {
+      var panel = document.getElementsByTagName("help-panel")[0];
+
+      while(panel) {
+        var docs_url = panel.attributes["docs-url"].value; 
+        var help_url = panel.attributes["help-url"].value;
+        
+        var html = makeHelpPanel(help_url, docs_url);
+        panel.outerHTML = html;
+
+        panel = document.getElementsByTagName("help-panel")[0]; 
+        // Not iterating the result because it changes after each iteration
+      }
+    }
+
+    $(document).ready(function(){
+      renderHelpPanels();
+    });
+  </script>
+</head>
+
+<body>
+
+  <div class="container template-home">
+
+    <header>
+      <div class="navbar navbar-default navbar-fixed-top navbar-mi2" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            </a>
+            <a class="navbar-brand navbar-mi2" href="../index.html">modelDown</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-mi2 nav navbar-nav">
+              <li>
+                <a href="../index.html">
+                  <span class="fa fa-home fa-lg"></span>
+
+                </a>
+              </li>
+
+              <li>
+                  <a href="../auditor/index.html">Auditor</a>
+              </li>
+              <li>
+                  <a href="../model_performance/index.html">Model Performance</a>
+              </li>
+              <li>
+                  <a href="../variable_importance/index.html">Variable Importance</a>
+              </li>
+              <li>
+                  <a href="../variable_response/index.html">Variable Response</a>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right"></ul>
+          </div>
+          <!--/.nav-collapse -->
+        </div>
+        <!--/.container -->
+      </div>
+      <!--/.navbar -->
+    </header>
+
+    <div class="row" style="position: relative; margin-bottom:60px;">
+      <div class="variable-selector-panel">
+    <b>Features</b>
+    <div class="panel panel-default">
+        <ul class="list-group">
+            <li class="list-group-item variable-link">
+                <a href="#age">age</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#class">class</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#embarked">embarked</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#fare">fare</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#gender">gender</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#parch">parch</a>
+            </li>
+            <li class="list-group-item variable-link">
+                <a href="#sibsp">sibsp</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="col-md-push-3 col-md-9 main-content contents">
+    <div class="plot-container">
+        <h2 id="age" class="hasAnchor">
+            <a href="#age" class="anchor"></a>
+            Feature: age
+        </h2>
+        <img class="plot" src="img/variable_response_age_pdp.svg" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/DALEX_docs/3-3-variableResponse.html#variableResponse" docs-url="https://pbiecek.github.io/DALEX/reference/variable_response.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::aread(&quot;MI2DataLab/modelDown_example/docs/modelDown_Titanic_example/repository/0903d08a56014555dafb78c9266e53dc&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="class" class="hasAnchor">
+            <a href="#class" class="anchor"></a>
+            Feature: class
+        </h2>
+        <img class="plot" src="img/variable_response_class_pdp.svg" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/DALEX_docs/3-3-variableResponse.html#variableResponse" docs-url="https://pbiecek.github.io/DALEX/reference/variable_response.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::aread(&quot;MI2DataLab/modelDown_example/docs/modelDown_Titanic_example/repository/aaefa117c456149e2dab34296a278cf3&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="embarked" class="hasAnchor">
+            <a href="#embarked" class="anchor"></a>
+            Feature: embarked
+        </h2>
+        <img class="plot" src="img/variable_response_embarked_pdp.svg" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/DALEX_docs/3-3-variableResponse.html#variableResponse" docs-url="https://pbiecek.github.io/DALEX/reference/variable_response.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::aread(&quot;MI2DataLab/modelDown_example/docs/modelDown_Titanic_example/repository/f7867540e0e201953825683d8eaa8668&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="fare" class="hasAnchor">
+            <a href="#fare" class="anchor"></a>
+            Feature: fare
+        </h2>
+        <img class="plot" src="img/variable_response_fare_pdp.svg" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/DALEX_docs/3-3-variableResponse.html#variableResponse" docs-url="https://pbiecek.github.io/DALEX/reference/variable_response.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::aread(&quot;MI2DataLab/modelDown_example/docs/modelDown_Titanic_example/repository/228690af389cd27c8d6f43220d1bc417&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="gender" class="hasAnchor">
+            <a href="#gender" class="anchor"></a>
+            Feature: gender
+        </h2>
+        <img class="plot" src="img/variable_response_gender_pdp.svg" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/DALEX_docs/3-3-variableResponse.html#variableResponse" docs-url="https://pbiecek.github.io/DALEX/reference/variable_response.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::aread(&quot;MI2DataLab/modelDown_example/docs/modelDown_Titanic_example/repository/c6f9b536335ada13c5465459c15a6e23&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="parch" class="hasAnchor">
+            <a href="#parch" class="anchor"></a>
+            Feature: parch
+        </h2>
+        <img class="plot" src="img/variable_response_parch_pdp.svg" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/DALEX_docs/3-3-variableResponse.html#variableResponse" docs-url="https://pbiecek.github.io/DALEX/reference/variable_response.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::aread(&quot;MI2DataLab/modelDown_example/docs/modelDown_Titanic_example/repository/f92679d2c55105f1cd30851154a4b006&quot;)</code></p></div>
+    </div>
+    <div class="plot-container">
+        <h2 id="sibsp" class="hasAnchor">
+            <a href="#sibsp" class="anchor"></a>
+            Feature: sibsp
+        </h2>
+        <img class="plot" src="img/variable_response_sibsp_pdp.svg" />
+        <br />
+        <help-panel help-url="https://pbiecek.github.io/DALEX_docs/3-3-variableResponse.html#variableResponse" docs-url="https://pbiecek.github.io/DALEX/reference/variable_response.html"></help-panel>
+        <div class="archivist-code"><p>Get this object: <code>archivist::aread(&quot;MI2DataLab/modelDown_example/docs/modelDown_Titanic_example/repository/41b554f2ed024688e916da4d10a67c72&quot;)</code></p></div>
+    </div>
+</div>
+    </div>
+
+
+  <footer>
+    <div class="footer">
+      <div class="text-center">Site built with <a href="https://github.com/MI2DataLab/modelDown">modelDown</a>.</div>
+      <div class="text-center" style="margin: 0px 0px 5px;">Last updated: 2019-03-17 11:33:52 (session_info: <a href="session_info/session_info.txt">.txt</a>, <a href="session_info/session_info.rda">.rda</a>)</div>
+    </div>
+  </footer>
+
+  </div>
+
+</body>
+</html>
